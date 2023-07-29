@@ -24,7 +24,9 @@ async function run() {
   try {
     await client.connect();
     console.log(" successfully connected to MongoDB!");
-    const productCollection = client.db("master-tech").collection("products");
+    const productCollection = client
+      .db("master-tech")
+      .collection("AllProducts");
 
     // ------------PRODUCT------------------------------
     app.get("/products/:id", async (req, res) => {
